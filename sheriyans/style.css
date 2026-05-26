@@ -1,0 +1,622 @@
+/* ==========================================================================
+   1. IMPORTS & DESIGN VARIABLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+@font-face {
+    font-family: Neue Machina;
+    src: url(./assets/NeueMachina-Regular.otf);
+}
+
+:root {
+      --primary-text-color: white;
+      --secondary-text-color: #E86023;
+      --primary-font: Neue Machina;
+      --secondary-font: Manrope;
+}
+
+/* ==========================================================================
+   2. GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #000000;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   3. NAVIGATION HEADER
+   ========================================================================== */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(0.1rem, 2.5vw, 3rem);
+    width: 100%;
+    font-size: clamp(0.75rem, 1.2vw, 2rem);
+    font-family: var(--secondary-font);
+    font-weight: 400;
+    gap: 2rem;
+    white-space: nowrap;
+    color: var(--primary-text-color);
+    min-height: 20vh;
+}
+
+.left-corner,
+.right-corner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+} 
+
+.middle-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    position: relative;
+    align-items: center;
+    color: #B9ADAF;
+    opacity: 0.8;
+}
+
+.right-corner {
+    justify-content: flex-end;
+}
+
+nav .left-corner .nav-logo img {
+    height: 3rem;
+    width: 3rem;
+}
+
+.right-corner img {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    object-fit: contain;
+}
+
+.line {
+    height: 2rem;
+    width: 1px;
+    background-color: var(--primary-text-color);
+    margin: 0 0.5rem;
+}
+
+.links {
+    text-decoration: none;
+    color: var(--primary-text-color);
+}
+
+.links:hover {
+    color: var(--secondary-text-color);
+    transition: ease-in 0.2s;
+}
+
+.arrow-down {
+    height: 2rem;
+    width: 2rem;
+    color: var(--primary-text-color);
+    font-size: medium;
+}
+
+.menu-btn {
+    display: none;
+    height: 3rem;
+    width: 3rem;
+    color: var(--primary-text-color);
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-btn:hover {
+    color: var(--secondary-text-color);
+}
+
+.menu-btn svg {
+    height: 2rem;
+    width: 2rem;
+}
+
+/* ==========================================================================
+   4. HERO SECTION
+   ========================================================================== */
+
+
+.hero {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-evenly;
+    min-height: 80vh;
+    height: auto;
+    background-image: url(./assets/asset\ 18.svg);
+    background-position: 60% 20%;
+    padding: 2rem;
+    background-repeat: no-repeat;
+}
+
+.hero h1 {
+    color: var(--primary-text-color);
+    font-family: var(--primary-font);
+    font-size: clamp(1.5rem, 4vw, 6rem);
+    font-weight: 400;
+    text-align: center;
+}
+
+.hero h4 {
+   color: var(--secondary-text-color);
+   font-family: var(--secondary-font);
+   font-size: clamp(0.8rem, 2vw, 2rem);
+   font-weight: 400;
+}
+
+.hero .hero-bottom {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.hero div .orange-text {
+    color: var(--secondary-text-color);
+    font-size: clamp(0.8rem, 1vw, 8rem);
+    font-family: var(--secondary-font);
+}
+
+.hero div .text {
+    color: var(--primary-text-color);
+    font-size: clamp(0.8rem, 1vw, 8rem);
+    font-family: var(--secondary-font);
+    opacity: 0.5;
+}
+
+.hero .images {
+    display: flex;
+    align-items: center;
+}
+
+.image {
+    object-fit: cover;
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin-left: -0.8rem;
+}
+
+.heading-description {
+    color: #B9ADAF;
+    opacity: 0.9;
+    font-family: var(--secondary-font);
+    font-size: clamp(1rem, 1.5vw, 3rem);
+    text-align: center;   
+}
+
+/* --- Bounding Box Selection Effect for "Companies" --- */
+.design-box {
+    position: relative;
+    display: inline-block;
+    border: 1.5px solid var(--secondary-text-color);
+    padding: 0.05em 0.2em;
+    margin: 0 0.05em;
+    background-color: rgba(232, 96, 35, 0.12); /* Subtle premium orange selection background */
+    line-height: 1;
+    border-radius: 2px;
+    vertical-align: baseline;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.design-box:hover {
+    background-color: rgba(232, 96, 35, 0.2);
+    box-shadow: 0 0 20px rgba(232, 96, 35, 0.3);
+}
+
+/* Pseudo-elements for the 4 selection handles (corner dots) */
+.design-box::before,
+.design-box::after {
+    content: "";
+    position: absolute;
+    left: -4px;
+    right: -4px;
+    height: 8px;
+    pointer-events: none;
+    background: 
+        linear-gradient(#ffffff, #ffffff) no-repeat left center,
+        linear-gradient(#ffffff, #ffffff) no-repeat right center;
+    background-size: 8px 8px;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.design-box::before {
+    top: -4px;
+}
+
+.design-box::after {
+    bottom: -4px;
+}
+
+/* Micro-interaction: Corner dots grow slightly on hover */
+.design-box:hover::before,
+.design-box:hover::after {
+    transform: scale(1.25);
+}
+
+/* --- Hero Button conic gradient animation --- */
+@property --angle {
+     syntax: "<angle>";
+     initial-value: 0deg;
+     inherits: false;
+}
+
+.hero button {
+    font-weight: 700;
+    font-family: var(--secondary-font);
+    font-size: 1.4rem;
+    padding: 0.6rem 1.2rem;
+    background: linear-gradient(to right, #E7602E, #BE4D23);
+    color: var(--primary-text-color);
+    border: none;
+    border-radius: 0.5rem;
+    width: 15rem;
+    max-height: 3.5rem;
+    height: 3.5rem;
+    text-align: center;
+    word-spacing: 5px;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.hero button::after,
+.hero button::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: conic-gradient(from var(--angle), orange, yellow);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) translateZ(-1px);
+    padding: 0.2rem;
+    border-radius: 0.5rem;
+    animation: 3s spin linear infinite;
+}
+
+.hero button::before {
+    filter: blur(1rem);
+    opacity: 0.5;
+}
+
+@keyframes spin {
+    from {
+        --angle: 0deg;
+    } 
+    to {
+        --angle: 360deg;
+    }
+}
+
+/* ==========================================================================
+   5. SECTION 2: GRID LAYOUT & STATISTICS
+   ========================================================================== */
+.section-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.section-2 .main {
+    display: grid;
+    width: 1400px;
+    height: auto;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas: 
+        "box1 box2 box3 box3"
+        "box4 box4 box3 box3";
+    gap: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: inset 0 0 30px rgba(232, 96, 35, 0.5);
+
+}
+
+/* --- Box 1: Subscribers Stat --- */
+.section-2 .main .box1 {
+    grid-area: box1;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 0.8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.section-2 .main .box1 .top {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.section-2 .main .box1 .top div {
+    display: flex;
+    gap: 2px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section-2 .main .box1 .top div img {
+    height: 60px;
+    width: 60px;
+}
+
+.section-2 .main .box1 .top div h1 {
+    font-family: var(--secondary-font);
+    font-size: clamp(2.5rem, 2.5vw, 5rem);
+    font-weight: 300;
+    background: linear-gradient(90deg, orange, red);
+    background-size: 100% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-2 .main .box1 .top p {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    opacity: 0.8;
+}
+
+.section-2 .main .box1 .bottom {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-color);
+    font-size: clamp(0.5rem, 1.2vw, 4rem);
+}
+
+/* --- Box 2: Career-Driven Learners Stat --- */
+.section-2 .main .box2 {
+    grid-area: box2;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    padding: 0.8rem;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.section-2 .main .box2 .top {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.section-2 .main .box2 .top div {
+    display: flex;
+    gap: 2px;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.section-2 .main .box2 .top div img {
+    height: 60px;
+    width: 60px;
+}
+
+.section-2 .main .box2 .top div h1 {
+    font-family: var(--secondary-font);
+    font-size: clamp(2.5rem, 2.5vw, 5rem);
+    letter-spacing: -1px;
+    font-weight: 300;
+    background: linear-gradient(90deg, orange, red);
+    background-size: 100% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.section-2 .main .box2 .top p {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-color);
+    font-size: clamp(1rem, 1.2vw, 4rem);
+    opacity: 0.8;
+}
+
+.section-2 .main .box2 .bottom {
+    font-family: var(--secondary-font);
+    color: var(--primary-text-color);
+    font-size: clamp(0.5rem, 1.2vw, 4rem);
+}
+
+/* --- Box 3: Video Start Learning --- */
+.section-2 .main .box3 {
+    grid-area: box3;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+}
+
+.section-2 .main .box3 video {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.section-2 .main .box3 h1 {
+    color: var(--primary-text-color);
+    font-family: var(--secondary-font);
+    font-size: clamp(2.3rem, 2.5vw, 5rem);
+    position: absolute;
+    z-index: 1;
+    top: 10px;
+    left: 14px;
+    font-weight: 300;
+}
+
+.section-2 .main .box3 button {
+    display: flex;
+    position: absolute;
+    align-items: center;
+    gap: 0.3rem;
+    justify-content: center;
+    height: 4rem;
+    font-weight: 100;
+    font-size: clamp(1rem, 1.2vw, 5rem);
+    width: clamp(8rem, 10.3vw, 20rem);
+    z-index: 1;
+    left: 1rem;
+    bottom: 0.9rem;
+    border-radius: 1rem;
+    color: var(--secondary-text-color);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 0.5rem;
+    font-family: var(--secondary-font);
+    backdrop-filter: blur(80px);
+    background-color: transparent;
+}
+
+.arrow-down {
+    font-size: clamp(0.5rem, 0.3vw, 3rem);
+    color: var(--secondary-text-color);
+    font-weight: 50;
+}
+
+/* --- Box 4: Job & Internship CTA --- */
+.section-2 .main .box4 {
+    grid-area: box4;
+    background-color: black;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap:20px;
+    padding: 1.5rem;
+}
+
+.section-2 .main .box4 h1 {
+    font-family: var(--secondary-font);
+    font-weight: 300;
+    color: var(--primary-text-color);
+    text-align: left;
+    font-size: clamp(1rem, 3vw, 5rem);
+}
+
+.section-2 .main .box4 .top {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    justify-content: flex-start;
+}
+
+.section-2 .main .box4 button {
+    width: 8.4rem;
+    height: 2.4rem;
+    border-radius: 1.5rem;
+    border: 1px solid rgb(232, 96, 46);
+    background-color: transparent;
+    color: var(--primary-text-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.3rem;
+}
+
+.section-2 .main .box4 button svg {
+    height: 2.4rem;
+    width: 4.2rem;
+}
+
+/* ==========================================================================
+   6. SECTION 3: INFINITE LOGO MARQUEE
+   ========================================================================== */
+.section-3 {
+    height: 20vh;
+    width: 100%;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background-color: #000000;
+}
+
+.section-3 .parent {
+    display: flex;
+    align-items: center;
+    gap: 10rem;
+    padding-right: 10rem;
+    flex-shrink: 0;
+    animation: logos 20s linear infinite;
+}
+
+.section-3 .parent img {
+    height: clamp(50px, 10vh, 100px);
+    width: auto;
+    object-fit: contain;
+}
+
+.section-3:hover .parent {
+    animation-play-state: paused;
+}
+
+@keyframes logos {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* ==========================================================================
+   7. RESPONSIVE MEDIA OVERRIDES
+   ========================================================================== */
+
+
+
+@media (max-width: 768px) {
+    .middle-links {
+        display: none;
+    }
+    .right-corner {
+        display: none;
+    }
+    .menu-btn {
+        display: flex;
+    }
+    .section-2 .main{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:870px) {
+ .section-2 .main {
+        
+        grid-template-columns: 1fr 1fr;
+
+        grid-template-areas:
+            "box1 box2"
+            "box4 box4"
+            "box3 box3";
+
+        grid-template-rows: auto auto auto;
+
+        padding: 1rem;
+    }
+
+    .section-2 .main .box3 video {
+        height: 400px;
+    }
+}
